@@ -6,8 +6,8 @@ interface Props {
 }
 
 export const ThisDay = (props: Props) => {
-
-  return <div className={s.this__day}>
+  return (
+  <div className={s.this__day}>
     <div className={s.top__block}>
       <div className={s.top__block_wrapper}>
         <div className={s.this__temp}>20ºC</div>
@@ -21,4 +21,5 @@ export const ThisDay = (props: Props) => {
       <div className={s.this__city}>Город: <span>Санкт-Петербург</span></div>
     </div>
   </div>
-}
+  );
+};
