@@ -1,18 +1,14 @@
 import React from "react";
-import s from './ThisDayInfo.module.scss';
-import cloud from '../../../../assets/images/cloud.png';
-import { ThisDayItem } from "./ThisDayItem";
+import Select from "react-select/";
+import { GlobalSvgSelector } from "../../assets/icons/global/GlobalSvgSelector";
+import { Item } from "../../pages/Home/components/ThisDayInfo/ThisDayInfo";
+import { ThisDayItem } from "../../pages/Home/components/ThisDayInfo/ThisDayItem";
+import s from './Popup.module.scss';
 
 interface Props {
 }
 
-export interface Item {
-  icon_id: string,
-  name: string,
-  value: string,
-}
-
-export const ThisDayInfo = (props: Props) => {
+export const Popup = (props: Props) => {
   const items = [
     {
       icon_id: 'temp',
@@ -36,12 +32,15 @@ export const ThisDayInfo = (props: Props) => {
     },
   ];
   return (
-    <div className={s.this__day_info}>
+    <>
+    <div className={s.blur}></div>
+    <div className={s.popup}>
       <div className={s.this__day_items}>{
         items.map(( item ) => 
           <ThisDayItem key={ item.icon_id } item={ item }/>
-        )}</div>
-     <img className={s.cloud__img} src={cloud} alt="Облако" />
-   </div>
+        )}
+      </div>
+    </div>
+    </>
   )
 }
